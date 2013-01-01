@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/csaladikonyveles.ico</file>
+        <file>images/shutdown.png</file>
+        <file>images/cassa.png</file>
+        <file>images/delete.png</file>
+        <file>images/exit.png</file>
+        <file>images/key.png</file>
+        <file>images/refresh.png</file>
+        <file>images/save.png</file>
+        <file>images/search.png</file>
+        <file>images/settings.png</file>
+        <file>images/open.png</file>
+        <file>images/import.png</file>
+        <file>images/export.png</file>
+        <file>images/close.png</file>
+    </qresource>
+</RCC>
