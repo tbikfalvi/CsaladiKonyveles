@@ -8,13 +8,14 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = CsaladiKonyveles
-TEMPLATE = app
+TARGET     = CsaladiKonyveles
+TEMPLATE   = app
+RC_FILE    = csaladikonyveles.rc
+RESOURCES += csaladikonyveles.qrc
 
+SOURCES   += main.cpp\
+             mainwindow.cpp
 
-SOURCES += main.cpp\
-        mainwindow.cpp
+HEADERS   += mainwindow.h
 
-HEADERS  += mainwindow.h
-
-FORMS    += mainwindow.ui
+FORMS     += mainwindow.ui
