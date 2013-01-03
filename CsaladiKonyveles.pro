@@ -8,14 +8,32 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET     = CsaladiKonyveles
-TEMPLATE   = app
-RC_FILE    = csaladikonyveles.rc
-RESOURCES += csaladikonyveles.qrc
+TARGET       = CsaladiKonyveles
+TEMPLATE     = app
+INCLUDEPATH += framework
 
-SOURCES   += main.cpp\
-             mainwindow.cpp
+RC_FILE      = csaladikonyveles.rc
+RESOURCES   += csaladikonyveles.qrc
 
-HEADERS   += mainwindow.h
+SOURCES     += framework/filewriter.cpp \
+               framework/guiwriter.cpp \
+               framework/logger.cpp \
+               framework/logmessage.cpp \
+               framework/preferences.cpp \
+               framework/tracer.cpp \
+               main.cpp\
+               mainwindow.cpp
 
-FORMS     += mainwindow.ui
+HEADERS     += framework/filewriter.h \
+               framework/guiwriter.h \
+               framework/logger.h \
+               framework/logmessage.h \
+               framework/logwriter.h \
+               framework/preferences.h \
+               framework/severity.h \
+               framework/sevexception.h \
+               framework/singleton.h \
+               framework/tracer.h \
+               mainwindow.h
+
+FORMS       += mainwindow.ui
