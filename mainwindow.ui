@@ -24,15 +24,19 @@
      <x>0</x>
      <y>0</y>
      <width>766</width>
-     <height>20</height>
+     <height>18</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
     <property name="title">
      <string>File</string>
     </property>
+    <addaction name="action_New"/>
     <addaction name="action_Open"/>
+    <addaction name="separator"/>
     <addaction name="action_Close"/>
+    <addaction name="separator"/>
+    <addaction name="action_Save"/>
     <addaction name="separator"/>
     <addaction name="action_ExitApplication"/>
    </widget>
@@ -59,8 +63,12 @@
    </attribute>
    <addaction name="action_ExitApplication"/>
    <addaction name="separator"/>
+   <addaction name="action_New"/>
    <addaction name="action_Open"/>
+   <addaction name="separator"/>
    <addaction name="action_Close"/>
+   <addaction name="separator"/>
+   <addaction name="action_Save"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="action_ExitApplication">
@@ -97,6 +105,33 @@
    </property>
    <property name="toolTip">
     <string>Close accounting project</string>
+   </property>
+  </action>
+  <action name="action_Save">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="csaladikonyveles.qrc">
+     <normaloff>:/images/save.png</normaloff>:/images/save.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Save</string>
+   </property>
+   <property name="toolTip">
+    <string>Save current accounting project</string>
+   </property>
+  </action>
+  <action name="action_New">
+   <property name="icon">
+    <iconset resource="csaladikonyveles.qrc">
+     <normaloff>:/images/new.png</normaloff>:/images/new.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;New ...</string>
+   </property>
+   <property name="toolTip">
+    <string>Create new accounting project</string>
    </property>
   </action>
  </widget>
