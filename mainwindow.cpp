@@ -23,9 +23,16 @@ void MainWindow::on_action_New_triggered()
 
 void MainWindow::on_action_Open_triggered()
 {
-    ui->action_ExitApplication->setEnabled( false );
+    QString qsFileName = QFileDialog::getOpenFileName(this, tr("Open Project file"), m_qsDirConf, tr("All Files (*.csk)"));
 
-    _bCanBeClosed = false;
+    if( qsFileName.length() > 0 )
+    {
+        ui->ledFileName->setText( QFileInfo(qsFileName).fileName() );
+        ui->ledFileName->setToolTip( qsFileName );
+        m_qsDirConf = QFileInfo(qsFileName).path();
+
+        _bCanBeClosed = false;
+    }
 }
 
 void MainWindow::on_action_Close_triggered()
