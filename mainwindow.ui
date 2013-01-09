@@ -17,19 +17,37 @@
    <iconset resource="csaladikonyveles.qrc">
     <normaloff>:/icons/csaladikonyveles.ico</normaloff>:/icons/csaladikonyveles.ico</iconset>
   </property>
-  <widget class="QWidget" name="centralWidget"/>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QTabWidget" name="tabProjects">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <property name="tabsClosable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Untitled project</string>
+       </attribute>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
      <width>766</width>
-     <height>18</height>
+     <height>20</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuFile">
+   <widget class="QMenu" name="menu_File">
     <property name="title">
-     <string>File</string>
+     <string>&amp;File</string>
     </property>
     <addaction name="action_New"/>
     <addaction name="action_Open"/>
@@ -40,7 +58,14 @@
     <addaction name="separator"/>
     <addaction name="action_ExitApplication"/>
    </widget>
-   <addaction name="menuFile"/>
+   <widget class="QMenu" name="menu_Edit">
+    <property name="title">
+     <string>&amp;Edit</string>
+    </property>
+    <addaction name="action_Preferences"/>
+   </widget>
+   <addaction name="menu_File"/>
+   <addaction name="menu_Edit"/>
   </widget>
   <widget class="QToolBar" name="toolBar">
    <property name="windowTitle">
@@ -132,6 +157,18 @@
    </property>
    <property name="toolTip">
     <string>Create new accounting project</string>
+   </property>
+  </action>
+  <action name="action_Preferences">
+   <property name="icon">
+    <iconset resource="csaladikonyveles.qrc">
+     <normaloff>:/images/preferences.png</normaloff>:/images/preferences.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Preferences</string>
+   </property>
+   <property name="toolTip">
+    <string>Modify application settings</string>
    </property>
   </action>
  </widget>

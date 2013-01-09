@@ -22,7 +22,8 @@ SOURCES     += framework/filewriter.cpp \
                framework/preferences.cpp \
                framework/tracer.cpp \
                main.cpp\
-               mainwindow.cpp
+               mainwindow.cpp \
+    projectkonyveles.cpp
 
 HEADERS     += framework/filewriter.h \
                framework/guiwriter.h \
@@ -34,6 +35,7 @@ HEADERS     += framework/filewriter.h \
                framework/sevexception.h \
                framework/singleton.h \
                framework/tracer.h \
-               mainwindow.h
+               mainwindow.h \
+    projectkonyveles.h
 
 FORMS       += mainwindow.ui

@@ -2,10 +2,11 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QVector>
 
-namespace Ui {
-class MainWindow;
-}
+#include "projectkonyveles.h"
+
+namespace Ui { class MainWindow; }
 
 class MainWindow : public QMainWindow
 {
@@ -16,6 +17,9 @@ public:
     ~MainWindow();
 
 protected:
+
+    QVector<ProjectKonyveles*>  qvProjects;
+
     void closeEvent( QCloseEvent *p_poEvent );
     
 private slots:
@@ -24,6 +28,8 @@ private slots:
     void on_action_Close_triggered();
     void on_action_Save_triggered();
     void on_action_ExitApplication_triggered();
+
+    void on_tabProjects_tabCloseRequested(int index);
 
 private:
 
