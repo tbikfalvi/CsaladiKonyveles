@@ -4,10 +4,9 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
-
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
+QT          += core gui xml
 TARGET       = CsaladiKonyveles
 TEMPLATE     = app
 INCLUDEPATH += framework
@@ -23,7 +22,7 @@ SOURCES     += framework/filewriter.cpp \
                framework/tracer.cpp \
                main.cpp\
                mainwindow.cpp \
-    projectkonyveles.cpp
+               projectkonyveles.cpp
 
 HEADERS     += framework/filewriter.h \
                framework/guiwriter.h \
@@ -36,6 +35,6 @@ HEADERS     += framework/filewriter.h \
                framework/singleton.h \
                framework/tracer.h \
                mainwindow.h \
-    projectkonyveles.h
+               projectkonyveles.h
 
 FORMS       += mainwindow.ui

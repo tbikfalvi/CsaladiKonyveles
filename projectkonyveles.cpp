@@ -3,14 +3,20 @@
 #include <QDomDocument>
 #include <QFile>
 
-
 #include "projectkonyveles.h"
 
 ProjectKonyveles::ProjectKonyveles(QObject *parent, QString p_qsFileName) : QObject(parent)
 {
+    _qsStatusMessage    = tr("Project initialization in progress ...");
+
     _qsFileName = p_qsFileName;
 
     _open();
+}
+
+QString ProjectKonyveles::statusMessage() const
+{
+    return _qsStatusMessage;
 }
 
 QString ProjectKonyveles::fileName() const
@@ -33,14 +39,33 @@ void ProjectKonyveles::setTabIndex(int p_nTabIndex)
     _nTabIndex = p_nTabIndex;
 }
 
+void ProjectKonyveles::_setStatusMessage(const QString &p_qsStatusMessage)
+{
+    _qsStatusMessage = p_qsStatusMessage;
+    emit signalStatusChanged( _qsStatusMessage );
+}
+
 void ProjectKonyveles::_open()
 {
-    QDomDocument doc( "atpconfig" );
-    QFile file( p_qsFileName );
+    signalStatusChanged( tr( "Parsing file: %1\n" ) );
+
+    QDomDocument doc( "konyveles" );
+    QFile file( _qsFileName );
 
     if( !file.open(QIODevice::ReadOnly) )
         return;
 
+    QString      qsErrorMsg  = "";
+    int          inErrorLine = 0;
+
+    file.seek( 0 );
+    if( !doc.setContent( &file, &qsErrorMsg, &inErrorLine ) )
+    {
+        signalStatusChanged( tr( "Error in line %2: %3" ).arg( _qsFileName ).arg( inErrorLine ).arg( qsErrorMsg ) );
+        file.close();
+        return;
+    }
+    file.close();
 
 }
 

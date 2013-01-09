@@ -9,6 +9,7 @@ class ProjectKonyveles : public QObject
 public:
     explicit ProjectKonyveles(QObject *parent = 0, QString p_qsFileName = "");
 
+    QString     statusMessage() const;
     QString     fileName() const;
     int         tabIndex();
 
@@ -18,10 +19,13 @@ public:
 private:
     QString     _qsFileName;
     int         _nTabIndex;
+    QString     _qsStatusMessage;
 
+    void        _setStatusMessage( const QString &p_qsStatusMessage );
     void        _open();
     
 signals:
+    void        signalStatusChanged( const QString &p_qsStatusMessage );
     
 public slots:
     
